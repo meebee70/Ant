@@ -7,19 +7,20 @@ public enum Colour {
 	//thanks to wikipedia for a colour list
 	
 	white (Color.WHITE, "white"),
-	black (Color.BLACK, "black"),
+	
 	red (Color.RED, "red"),
-	blue (Color.blue, "blue"),
-	green (Color.GREEN, "green"),
+	
+	
 	orange (Color.ORANGE, "orange"),
 	yellow (Color.YELLOW, "yellow"),
 	purple (Color.MAGENTA, "purple"),
 	pink(Color.PINK, "pink"),
-	//end of default colours
 	
 	brown(new Color(165,82,45), "brown"),
 	aqua(new Color(0,255,255), "aqua"),
 	beige(new Color(245,245,220), "beige"),
+	black (Color.BLACK, "black"),
+	blue (Color.blue, "blue"),
 	bronze(new Color(205,127,50), "bronze"),
 	bubble_gum(new Color(255,193,204), "bubble gum"),
 	citrine(new Color(228,208,10), "citrine"),
@@ -37,6 +38,11 @@ public enum Colour {
 	fulvous(new Color(228,132,0), "fulvous"),
 	fuzzy_wuzzy(new Color(204,102,102), "fuzzy wuzzy"),
 	//end of A - F
+	gold(new Color(165,124,0),"gold"),
+	grape(new Color(111,45,168), "grape"),
+	green (Color.GREEN, "green"),
+	heliotrope(new Color(223,115,225), "heliotrope"),
+	imperial_purple(new Color(96,47,107), "imperial purple"),
 	
 	seafoam_green(new Color(114,214,155),"seafoam green");//this is only here because Adam asked for it
 	

@@ -194,17 +194,20 @@ public class Window extends JFrame {
 					
 					File file = (File) JOptionPane.showInputDialog(contentPane.getParent(), "Which ant would you like to load?","load ant",JOptionPane.PLAIN_MESSAGE,null,antSaves,"");
 					
-					try {
-						
-						FileInputStream fileIn = new FileInputStream(file);
-						ObjectInputStream in = new ObjectInputStream(fileIn);
-						newActions = (Action[]) in.readObject();
-						in.close();
-						fileIn.close();
-						
-						m.getAnt().setActions(newActions);
-						
-					} catch (Exception e){}
+					
+					if (file != null){
+						try {
+							
+							FileInputStream fileIn = new FileInputStream(file);
+							ObjectInputStream in = new ObjectInputStream(fileIn);
+							newActions = (Action[]) in.readObject();
+							in.close();
+							fileIn.close();
+							
+							m.getAnt().setActions(newActions);
+							
+						} catch (Exception e){}
+					}
 				}else{
 					JOptionPane.showMessageDialog(contentPane.getParent(), "There are no current ant saves!");
 				}
