@@ -7,10 +7,16 @@ import Engine.Manager;
 
 import java.awt.Color;
 
-public class Board {
+public class Board implements java.io.Serializable{
 	
-	private final Color[][] board;
-	private final Color starterColour = Color.WHITE;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6744659760631806689L;
+	
+	private final Colour[][] board;
+	private final int width,height;
+	private final Colour starterColour;
 	private BufferedImage buffedImg;
 	private Graphics buffedG;
 	private Manager m;
@@ -23,9 +29,12 @@ public class Board {
 	 * @param width the amount of width the board should take physically take up
 	 * @param height the amount of height the board should physically take up
 	 */
-	public Board(int x, int y,Manager m){
+	public Board(int x, int y,Colour c,Manager m){
 		this.m = m;
-		board = new Color[x][y];
+		board = new Colour[x][y];
+		width = x;
+		height = y;
+		starterColour = c;
 		buffedImg = new BufferedImage((int)(x ),(int)( y ), BufferedImage.TYPE_INT_RGB);
 		buffedG = buffedImg.getGraphics();
 		
@@ -35,15 +44,28 @@ public class Board {
 				board[i][j] = starterColour;
 			}
 		}
+	}
+	
+	public void reset(){
+		for (int i = 0;i <width;i++){
+			for (int j = 0;j < height;j++){
+				board[i][j] = starterColour;
+			}
+		}
 		
-		
+		m.getAnt().reset();
 	}
 	
 	public Color getColour(int x, int y){
-		return board[x][y];
+		if ((x >= width || x < 0) || (y >= height || y < 0)){
+			m.finishBoard();
+			return null;
+		}
+		
+		return board[x][y].getColor();
 	}
 	
-	public void setColour(int x, int y, Color c){
+	public void setColour(int x, int y, Colour c){
 		board[x][y] = c;
 	}
 	
@@ -54,7 +76,7 @@ public class Board {
 		
 		for (int i = 0; i < board.length;i++){
 			for (int j = 0; j < board[0].length;j++){
-				buffedG.setColor(board[i][j]);
+				buffedG.setColor(board[i][j].getColor());
 				buffedG.fillRect((int)(i),(int) (j),1,1);
 				//System.out.println(i + " " + j);
 			}
@@ -79,8 +101,16 @@ public class Board {
 		return board[0].length;
 	}
 	
+	public Colour getStartColor(){
+		return starterColour;
+	}
+	
 	public Graphics getRawImage(){
 		return buffedG;
+	}
+	
+	public BufferedImage getbuffedImage(){
+		return buffedImg;
 	}
 
 }
