@@ -163,15 +163,17 @@ public class Window extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				String name = (String) JOptionPane.showInputDialog(contentPane.getParent(), "what would you like to call your ant?","saving my ant",JOptionPane.PLAIN_MESSAGE,null,null,"");
 				
-				try {
-					FileOutputStream fileOut = new FileOutputStream("ant saves/" +name);
-					ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					out.writeObject(m.getAnt().getActions());
-					out.close();
-					fileOut.close();
-					
-				} catch (IOException e) {
-					e.printStackTrace();
+				if (!(name == null)){
+					try {
+						FileOutputStream fileOut = new FileOutputStream("ant saves/" +name);
+						ObjectOutputStream out = new ObjectOutputStream(fileOut);
+						out.writeObject(m.getAnt().getActions());
+						out.close();
+						fileOut.close();
+						
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 				
 			}
@@ -225,11 +227,12 @@ public class Window extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				String name = (String) JOptionPane.showInputDialog(contentPane.getParent(),"What would you like to name your universe? /n all universes are exported to the universe saves file /n located where you have the program", "Save universe",JOptionPane.PLAIN_MESSAGE,null,null,"" );
 				
-				try{
-					File outputFile = new File("universe saves/" +name + ".png");
-					ImageIO.write(m.getBoard().getbuffedImage(), "png", outputFile);
-				}catch (Exception e){}
-				
+				if (!(name == null)){
+					try{
+						File outputFile = new File("universe saves/" +name + ".png");
+						ImageIO.write(m.getBoard().getbuffedImage(), "png", outputFile);
+					}catch (Exception e){}
+				}
 			}
 		});
 		btnExportUniverseAs.setBounds(442, 345, 187, 23);
