@@ -43,6 +43,12 @@ public enum Colour {
 	green (Color.GREEN, "green"),
 	heliotrope(new Color(223,115,225), "heliotrope"),
 	imperial_purple(new Color(96,47,107), "imperial purple"),
+	indigo(new Color(75,0,130), "indigo"),
+	ivory(new Color(255,255,240), "ivory"),
+	jade(new Color(0,168,107), "jade"),
+	jasper(new Color(215,59,62), "jasper"),
+	jet(new Color(52,52,52), "jet"),
+	kiwi(new Color(142,229,63), "kiwi"),
 	
 	seafoam_green(new Color(114,214,155),"seafoam green");//this is only here because Adam asked for it
 	
