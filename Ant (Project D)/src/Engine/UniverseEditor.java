@@ -112,7 +112,7 @@ public class UniverseEditor extends JFrame {
 					widthInput.setText("Please enter a positive integer");
 					heightInput.setText("Please enter a positive integer");
 					isValid = false;
-				}else if (width * height > 9000000){
+				}else if (width * height > Math.pow(5000,2)){//a hard cap on how big the user can make their universe
 					if (width >= height){
 						widthInput.setText("Please enter a smaller number");
 					}else{
