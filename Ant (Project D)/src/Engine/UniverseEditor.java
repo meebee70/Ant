@@ -156,7 +156,7 @@ public class UniverseEditor extends JFrame {
 		contentPane.add(btnCancel);
 		
 		keepAntButton = new JCheckBox(" Keep ant");
-		keepAntButton.setSelected(true);
+		//keepAntButton.setSelected(true);
 		keepAntButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
