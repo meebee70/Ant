@@ -5,14 +5,7 @@ import java.util.Random;
 
 public enum Colour {
 	
-	//thanks to wikipedia for a colour list
-	
-	
-	
-	
-	
-	
-	
+	//thanks to Wikipedia for a colour list  (https://en.wikipedia.org/wiki/Lists_of_colors)
 	
 	
 	aqua(new Color(0,255,255), "aqua"),
