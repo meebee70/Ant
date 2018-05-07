@@ -1,18 +1,12 @@
 package Engine;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.FlowLayout;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import Functionality.Direction;
-import javafx.scene.paint.Color;
 import Functionality.Ant;
 import Functionality.Board;
 import Functionality.Colour;

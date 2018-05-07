@@ -7,7 +7,6 @@ import javax.swing.border.EmptyBorder;
 import Functionality.Action;
 import Functionality.Board;
 
-import javax.swing.JScrollBar;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -18,17 +17,12 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 
 public class Window extends JFrame {
